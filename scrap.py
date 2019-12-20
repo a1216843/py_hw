@@ -12,6 +12,8 @@ from html_table_parser import parser_functions as parser
 driver =webdriver.Chrome()
 i=1001
 
+pd.options.display.float_format = '{:.2f}'.format
+
 font_path = 'c:/Windows/Fonts/H2HDRM.ttf'
 font_name = font_manager.FontProperties(fname=font_path).get_name()
 rc('font',family=font_name)
@@ -38,7 +40,6 @@ while True:
     df_2=df_2.apply(pd.to_numeric)
     print(df_2)
     print(df_2.describe())
-    print(df_2.dtypes)
     df_2.T.plot.bar()
     plt.show()
     i=i+df.shape[0]
