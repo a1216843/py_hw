@@ -10,7 +10,7 @@ import pandas as pd
 from html_table_parser import parser_functions as parser
 
 driver =webdriver.Chrome()
-i=1050
+i=1001
 
 font_path = 'c:/Windows/Fonts/H2HDRM.ttf'
 font_name = font_manager.FontProperties(fname=font_path).get_name()
@@ -37,6 +37,7 @@ while True:
     df_2=df_2.set_index(df.iloc[:,0])
     df_2=df_2.apply(pd.to_numeric)
     print(df_2)
+    print(df_2.describe())
     print(df_2.dtypes)
     df_2.T.plot.bar()
     plt.show()
